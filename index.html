@@ -24,7 +24,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion modal-backdrop" id="menu" >
             <li class="nav-item dropdown dropright">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">MENÚ</a>
                 <div class="dropdown-menu">
@@ -104,7 +104,7 @@
                     <div id="content">
 
                         <!-- Topbar -->
-                        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                        <nav class="navbar navbar-expand navbar-white topbar mb-4 bg-white static-top shadow fixed-top" id="menu">
 
                             <!-- Sidebar Toggle (Topbar) -->
                             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -254,7 +254,7 @@
 <li class="nav-item dropdown no-arrow">
     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Felix Javier</span>
+    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Raúl Hernández</span>
     <img class="img-profile rounded-circle"
     src="img/undraw_profile.svg">
 </a>
@@ -287,14 +287,17 @@ aria-labelledby="userDropdown">
 <!-- End of Topbar -->
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid" style="padding-top: 7%; padding-left: 19%" id="contenido">
 
     <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-        </div>
+    <div class="row mb-4">
+        <a href="#" class="btn btn-sm btn-primary" id="claro" onclick="claro();"><i
+            class="fas fa-sun fa-sm text-white col-md-2"></i> Claro</a>
+        <a href="#"><i
+            class=" col-md-2"></i></a>
+        <a href="#" class="btn btn-sm btn-primary" id="oscuro" onclick="oscuro();"><i
+            class="fas fa-moon fa-sm text-white col-md-2"></i> Oscuro</a>
+    </div>
 
         <!-- Content Row -->
         <div class="row">
@@ -621,7 +624,7 @@ aria-labelledby="userDropdown">
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="sticky-footer bg-white" style="padding-left: 20%" id="footer">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy;<a target="_blank" href="http://www.utdelacosta.edu.mx/">Ut de La Costa</a></span>
@@ -677,6 +680,30 @@ aria-labelledby="userDropdown">
 <!-- Page level custom scripts -->
 <script src="js/demo/chart-area-demo.js"></script>
 <script src="js/demo/chart-pie-demo.js"></script>
+
+<script>
+    
+    
+
+function claro () {
+    $("#contenido").removeClass("bg-dark");
+    $("#contenido").addClass("bg-white");
+    $("#footer").removeClass("bg-dark");
+    $("#footer").addClass("bg-white");
+    $("#menu").removeClass("bg-dark");
+
+}
+
+function oscuro () {
+    $("#contenido").removeClass("bg-white");
+    $("#contenido").addClass("bg-dark");
+    $("#footer").removeClass("bg-white");
+    $("#footer").addClass("bg-dark");
+    $("#menu").removeClass("bg-white");
+    $("#menu").addClass("bg-dark");
+}
+
+</script>
 
 </body>
 
